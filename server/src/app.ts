@@ -1,5 +1,4 @@
 import Config from "./config";
-import Server from "./server";
 import Database from "./db";
 import Repositories from "./db/repositories";
 import Services from "./services";
@@ -14,6 +13,7 @@ import { KhachHangRoutes } from "./api/khachhang/khachhang.route";
 import { RoleModel } from "./db/models/Role.model";
 import { UserModel } from "./db/models";
 import { Roles } from "./constants";
+import Server from '../../server';
 
 const seeder = require("mongoose-seed");
 const bootstap = async () => {
