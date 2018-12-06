@@ -1,0 +1,72 @@
+<div class="flex-box" style="overflow-x: hidden;">
+    <div id="fixNav" class="content-header">
+        <div class="row">
+            <div class="col-3 col-md-3">
+                <a><img (click)="activeNav(1)" src="assets/logo-tdmu.png"></a>
+            </div>
+            <div class="col-6 col-md-6" style="text-align: center;">
+                <div class="btn-group btn-group-justified">
+                    <div class="btn-group" style="width: 100%;" (click)="activeNav(1)">
+                        <a class="btn btn-nav" style="width: 100%;" [ngClass]="{on: statusActive==1}" style="color:black" >
+                            <span class="glyphicon glyphicon-folder-close"></span>
+                            <p class="text-nav">TRANG CHỦ</p>
+                        </a>
+                    </div>
+                    <div class="btn-group" style="width: 100%;" (click)="activeNav(2)">
+                        <a class="btn btn-nav" style="width: 100%;" [ngClass]="{on: statusActive==2}" style="color:black" >
+                            <span class="glyphicon glyphicon-star"></span>
+                            <p class="text-nav">TIN TỨC</p>
+                        </a>
+                    </div>
+                    <div class="btn-group" style="width: 100%;" (click)="activeNav(3)">
+                        <a class="btn btn-nav" style="width: 100%;" [ngClass]="{on: statusActive==3}" style="color:black" >
+                            <span class="glyphicon glyphicon-list-alt"></span>
+                            <p class="text-nav">HỖ TRỢ</p>
+                        </a>
+                    </div>
+                    <div class="btn-group" style="width: 100%;" (click)="activeNav(4)">
+                        <a class="btn btn-nav" style="width: 100%;" [ngClass]="{on: statusActive==4}" style="color:black" >
+                            <span class="glyphicon glyphicon-screenshot"></span>
+                            <p class="text-nav">GIỚI THIỆU</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3 col-md-3">
+                <div *ngIf="!token" style="text-align: center;padding-top: 1rem;">
+                        <button [routerLink]="['/auth/login']" routerLinkActive="router-link-active"  style="width: 100px;" type="button" class="btn btn-info">Đăng nhập</button>
+                        <button [routerLink]="['/auth/dangki']" routerLinkActive="router-link-active"  style="width: 100px;" type="button" class="btn btn-danger">Đăng kí</button>
+                </div>
+                <div class="row" *ngIf="token" style="
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);">
+                    <p class="col-6 col-md-6">{{nameUser}}</p>
+                    <div class="col-6 col-md-6" >
+                        <button (click)="logOut()">Đăng Xuất</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="content-body">
+        <router-outlet></router-outlet>
+    </div>
+    <div id="footer" class="content-footer">
+        <div class="row">
+            <div class="col-4 col-md-4 col-sm-4">
+                <a><img src="assets/logo-tdmu.png"></a>
+            </div>
+            <div class="col-4 col-md-4 col-sm-4">
+                <p>Web được xây dựng nhằm mục đích học tập</p>
+            </div>
+            <div class="col-4 col-md-4 col-sm-4" style="text-align: center;margin-top: 4rem;">
+                <img style="height: 40px;" src="assets/gmail.png">
+                <img style="height: 40px;" src="assets/77332936.webp">
+                <img style="height: 40px;" src="assets/1521176194-brasol.vn-logo-zalo-vector-logo-zalo-vector.png">
+            </div>
+        </div>
+    </div>
+</div>

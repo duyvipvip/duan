@@ -1,0 +1,12 @@
+@import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
+@import '~ngx-toastr/toastr.css';
+/* You can add global styles to this file, and also import other style files */
+
+
+.bg-img
+{
+    background-image: url('/assets/photo-1523325343676-4136d25d013b.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat; 
+}
+
