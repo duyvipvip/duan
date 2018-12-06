@@ -4,7 +4,7 @@ import { ITokenConfig, IMailConfig } from "../interfaces";
 import { IDBConfig } from "../db";
 
 export const configFile = {
-    filePath: resolve("config", "config.json"),
+    filePath: resolve("server/config", "config.json"),
     privateKey: resolve("config", "key", "privateKey"),
     publicKey: resolve("config", "key", "publicKey")
 };
