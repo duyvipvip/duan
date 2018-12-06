@@ -2,18 +2,26 @@ import Config from "./config";
 import Database from "./db";
 import Repositories from "./db/repositories";
 import Services from "./services";
-
+const path  = require('path');
 import { IRouteConfig, IRepositories } from "./interfaces";
 import { ErrorRequestHandler, headerMiddleware } from "./api/middlewares";
 
 import { UserRoutes, AuthRoutes } from "./api";
 import { Contrib } from "./contrib";
-import { ChuXeRoutes } from "./api/chuxe/chuxe.route";
-import { KhachHangRoutes } from "./api/khachhang/khachhang.route";
-import { RoleModel } from "./db/models/Role.model";
-import { UserModel } from "./db/models";
-import { Roles } from "./constants";
-import Server from '../../server';
+
+var ChuXeRoutes = require(path.join(__dirname, "./api/chuxe/chuxe.route"));
+var KhachHangRoutes = require(path.join(__dirname, "./api/khachhang/khachhang.route"));
+var RoleModel = require(path.join(__dirname, "./api/chuxe/chuxe.route"));
+var UserModel = require(path.join(__dirname, "./db/models"));
+var Roles = require(path.join(__dirname, "./constants"));
+var Server = require(path.join(__dirname, "../../server"));
+
+// import { ChuXeRoutes } from "./api/chuxe/chuxe.route";
+// import { KhachHangRoutes } from "./api/khachhang/khachhang.route";
+// import { RoleModel } from "./db/models/Role.model";
+// import { UserModel } from "./db/models";
+// import { Roles } from "./constants";
+// import Server from '../../server';
 
 const seeder = require("mongoose-seed");
 const bootstap = async () => {
